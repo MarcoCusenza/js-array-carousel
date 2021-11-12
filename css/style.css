@@ -18,14 +18,18 @@ img{
     margin: auto;
     display: flex;
 }
-
-.margin-top-middlepage{
-    margin-top: calc((100vh - 400px) / 2);
-}
 /* /COMMONS */
 
 /* MAIN */
 /* MAIN COMMONS */
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(40, 40, 40);
+}
+
 #showcase, #library{
     height: 400px;
 }
@@ -37,7 +41,8 @@ img{
     position: relative;
 }
 
-#showcase img{
+#showcase .item-img{
+    height: 100%;
     display: none;
 }
 
@@ -69,17 +74,28 @@ img{
 #library{
     width: 15%;
     position: relative;
-    display: flex;
-    flex-direction: column;
     background-color: black;
 }
 
-#library img{
+#img-box{
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#library .item-mini{
     opacity: .4;
+    min-height: calc(100% / 5);
+}
+
+#library img{
+    display: block;
 }
 
 #library .active{
     opacity: 1;
+    border: 2px solid lightgray;
 }
 
 .arrow-up, .arrow-down{

@@ -29,45 +29,66 @@ const text = [
 // +++ VARIABILI +++
 // Link oggetti html
 const showcase = document.getElementById("showcase");
-const library = document.getElementById("library");
-const arrowUp = document.querySelector(".arrow-up");
-const arrowDown = document.querySelector(".arrow-down");
+const library = document.getElementById("img-box");
+const arrowUp = document.getElementById("su");
+const arrowDown = document.getElementById("giu");
 
 //Altre Variabili
 let activeItem = 0;
 // +++ /VARIABILI +++
 
 
-
 // +++ PROGRAMMA +++
-// Riempimento Showcase img
+
 for (let i = 0; i < items.length; i++) {
-    showcase.innerHTML += `<img src="${items[i]}" alt="Paesaggio ${title[i]}" class="img-${i}">`;
-}
-// Riempimento Showcase text
-for (let i = 0; i < items.length; i++) {
-    showcase.innerHTML += `<div class="text-box box-${i}"> 
+    // Riempimento Showcase img + Riempimento Showcase text
+    showcase.innerHTML += `<div class="item-img"><img src="${items[i]}" alt="Paesaggio ${title[i]}"></div>
+    <div class="text-box item-text">
     <h2>${title[i]}</h2>
     <p>${text[i]}</p>
     </div>`;
-}
-// Riempimento Library
-for (let i = 0; i < items.length; i++) {
-    library.innerHTML += `<img src="${items[i]}" alt="Paesaggio ${title[i]}" class="img-lib-${i}">`;
+
+    // Riempimento Library
+    library.innerHTML += `<div class="item-mini"><img src="${items[i]}" alt="Paesaggio ${title[i]}"></div>`;
 }
 
-document.querySelector(`.img-${activeItem}`).classList.add("active");
-document.querySelector(`.img-lib-${activeItem}`).classList.add("active");
-document.querySelector(`.box-${activeItem}`).classList.add("active");
+
+const arrayItemsImg = document.getElementsByClassName("item-img");
+const arrayItemsText = document.getElementsByClassName("item-text");
+const arrayItemsMini = document.getElementsByClassName("item-mini");
+
+arrayItemsImg[activeItem].classList.add("active");
+arrayItemsText[activeItem].classList.add("active");
+arrayItemsMini[activeItem].classList.add("active");
+
+
+arrowUp.addEventListener("click", function a() {
+    arrayItemsImg[activeItem].classList.remove("active");
+    arrayItemsText[activeItem].classList.remove("active");
+    arrayItemsMini[activeItem].classList.remove("active");
+    if (activeItem != 0) {
+        activeItem--;
+    } else {
+        activeItem = items.length - 1;
+    }
+    arrayItemsImg[activeItem].classList.add("active");
+    arrayItemsText[activeItem].classList.add("active");
+    arrayItemsMini[activeItem].classList.add("active");
+});
+
+
+arrowDown.addEventListener("click", function b() {
+    arrayItemsImg[activeItem].classList.remove("active");
+    arrayItemsText[activeItem].classList.remove("active");
+    arrayItemsMini[activeItem].classList.remove("active");
+    if (activeItem != items.length - 1) {
+        activeItem++;
+    } else {
+        activeItem = 0;
+    }
+    arrayItemsImg[activeItem].classList.add("active");
+    arrayItemsText[activeItem].classList.add("active");
+    arrayItemsMini[activeItem].classList.add("active");
+});
+
 // +++ /PROGRAMMA +++
-
-
-
-
-
-
-// arrowUp.addEventListener("click", functionUp());
-
-// function functionUp() {
-
-// }
