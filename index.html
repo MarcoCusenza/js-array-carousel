@@ -6,9 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carosello Multi Array</title>
-
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome -->
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <!-- CDN Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,22 +22,20 @@
 
 <body>
     <main>
-        <div class="container margin-top-middle">
-            <div id="showcase">
-                <img src="img/02.jpg" alt="paesaggio svizzera">
-                <div class="text">
-                    <h2>Svizzera</h2>
-                    <p>Lorem ipsum</p>
-                </div>
-            </div>
+        <div class="container margin-top-middlepage">
+            <!-- Showcase -->
+            <div id="showcase"></div>
+
+            <!-- Library -->
             <div id="library">
-                <img src="img/01.jpg" alt="" class="active">
-                <img src="img/02.jpg" alt="">
-                <img src="img/03.jpg" alt="">
-                <img src="img/04.jpg" alt="">
-                <img src="img/05.jpg" alt="">
-                <i class="fas fa-chevron-up arrow-up"></i>
-                <i class="fas fa-chevron-down arrow-down"></i>
+                <!-- Freccia su -->
+                <div class="arrow-up">
+                    <i class="fas fa-chevron-up"></i>
+                </div>
+                <!-- Freccia giù -->
+                <div class="arrow-down">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
         </div>
 

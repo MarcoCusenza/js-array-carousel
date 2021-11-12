@@ -1,8 +1,10 @@
+/* COMMONS */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: white;
+    font-family: 'Lato', sans-serif;
 }
 
 img{
@@ -17,30 +19,53 @@ img{
     display: flex;
 }
 
+.margin-top-middlepage{
+    margin-top: calc((100vh - 400px) / 2);
+}
+/* /COMMONS */
+
+/* MAIN */
+/* MAIN COMMONS */
 #showcase, #library{
     height: 400px;
 }
+/* /MAIN COMMONS */
 
+/* SHOWCASE */
 #showcase{
     width: 85%;
     position: relative;
 }
 
-#showcase .text{
+#showcase img{
+    display: none;
+}
+
+#showcase .text-box{
     position: absolute;
     bottom: 7%;
     right: 3%;
     text-align: end;
+    max-width: 50%;
+    display: none;
 }
 
-#showcase .text h2{
-    font-size: 25px;
+#showcase .text-box h2{
+    font-size: 22px;
 }
 
-#showcase .text p{
-    font-size: 20px;
+#showcase .text-box p{
+    font-size: 17px;
+    padding-top: 10px;
 }
 
+#showcase .active{
+    display: block;
+}
+/* /SHOWCASE */
+
+
+/* LIBRARY */
 #library{
     width: 15%;
     position: relative;
@@ -49,42 +74,38 @@ img{
     background-color: black;
 }
 
-/* NON DINAMICO!!! */
 #library img{
-    height: calc(100% / 5);
-    opacity: .2;
+    opacity: .4;
 }
 
-.arrow-up, .arrow-down{
-    color: black;
-    background-color: #cccccc;
-    border-radius: 50%;
-    width: 30px;
-    padding: 7.5px 0 7.5px 0;
-    position: absolute;
-    text-align: center;
-}
-
-.arrow-up{
-    left: 50%;
-    top: 3%;
-    transform: translate(-50%, 0%);
-}
-
-.arrow-down{
-    left: 50%;
-    bottom: 3%;
-    transform: translate(-50%, 0%);
-}
-
-.active{
+#library .active{
     opacity: 1;
 }
 
-
-
-
-.margin-top-middle{
-    margin-top: calc((100vh - 400px) / 2);
+.arrow-up, .arrow-down{
+    background-color: #cccccc;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    z-index: 999;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
+
+.arrow-up i, .arrow-down i{
+    color: black;
+}
+
+.arrow-up{
+    top: 3%;
+}
+
+.arrow-down{
+    bottom: 3%;
+}
+/* /LIBRARY */
 
